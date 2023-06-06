@@ -1,12 +1,16 @@
 {
     "name": "stilinski/ussd",
-    "description": "an easy to use php USSD library",
     "type": "library",
+    "description": "an easy to use php USSD library",
+    "keywords": [
+        "ussd",
+        "ussdapplication"
+    ],
+    "homepage": "https://github.com/StilinskiCyril/stilinski-ussd",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Stilinski\\Ussd\\": "src/"
-        }
+    "support": {
+        "source": "https://github.com/StilinskiCyril/stilinski-ussd",
+        "issues": "https://github.com/StilinskiCyril/stilinski-ussd/issues"
     },
     "authors": [
         {
@@ -14,6 +18,13 @@
             "email": "aguvasucyril@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Stilinski\\Ussd\\": "src/"
+        }
+    },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "php": ">=8.0"
+    }
 }
