@@ -11,20 +11,9 @@
 
 Stilinski Ussd is a modern multi-language (english and swahili) laravel dynamic ussd application framework with expressive, elegant syntax. Very easy to use. It also has a ussd simulator for  easy debugging & maintenance.
 
-## Installation Procedure
+## Installation
 
-### Add the following to your root composer.json
-
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:StilinskiCyril/ussd.git"
-        }
-    ],
-
-### Require the package
-
-    composer require stilinski/ussd
+    composer require stilinski/ussd:dev-main
 
 ### Also require these additional packages
 
@@ -53,6 +42,10 @@ Stilinski Ussd is a modern multi-language (english and swahili) laravel dynamic 
 ### Simulator URL
 
     The ussd simulator can be found in the url "/simulator". Kindly note that it mimics a live ussd environment meaning that you have to click "new session" button whenever you want to simulate the start of a new session.
+
+### Uninstallation
+
+    composer remive stilinski/ussd
 
 ## Security Vulnerabilities
 
