@@ -14,5 +14,6 @@
             "email": "aguvasucyril@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {}
 }
