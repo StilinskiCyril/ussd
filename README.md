@@ -48,8 +48,7 @@ Stilinski Ussd is a modern multi-language (english and swahili) laravel dynamic 
     END_SESSION_SLEEP_SECONDS= 2
     USSD_CODE=657 #This is the ussd code given to you by your provider eg 999
     LOG_USSD_REQUEST=true #Log the requests hitting your endpoint
-
-### N/B Make sure your register "api/process-payload/55034fd5-bd23h5d9948f" url as the root endpoint with your ussd service provider
+    ONLINE_ENDPOINT='api/process-payload/55034fd5-bd23h5d9948f' #The target url that your service provider will be hitting your app
 
 ### Simulator URL
 
