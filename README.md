@@ -45,7 +45,7 @@ Stilinski Ussd is a modern multi-language (english and swahili) laravel dynamic 
 
 ### Uninstallation
 
-    composer remive stilinski/ussd
+    composer remove stilinski/ussd
 
 ## Security Vulnerabilities
 
