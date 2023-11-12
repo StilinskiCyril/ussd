@@ -1,0 +1,42 @@
+{
+    "name": "aguva/ussd",
+    "type": "library",
+    "description": "an easy to use php USSD library",
+    "keywords": [
+        "ussd",
+        "ussdapplication"
+    ],
+    "homepage": "https://github.com/StilinskiCyril/aguva-ussd",
+    "license": "MIT",
+    "support": {
+        "source": "https://github.com/StilinskiCyril/aguva-ussd",
+        "issues": "https://github.com/StilinskiCyril/aguva-ussd/issues"
+    },
+    "authors": [
+        {
+            "name": "Cyril Aguvasu",
+            "email": "aguvasucyril@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Aguva\\Ussd\\": "src/"
+        },
+        "files": ["src/helpers.php"]
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "giggsey/libphonenumber-for-php": "^8.13",
+        "pda/pheanstalk": "^4.0",
+        "doctrine/dbal": "^3.6.6"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aguva\\Ussd\\Providers\\UssdServiceProvider"
+            ]
+        }
+    }
+}
