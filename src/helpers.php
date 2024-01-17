@@ -1,7 +1,6 @@
 <?php
 
 use Aguva\Ussd\Models\UssdUser;
-use App\Models\User;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
@@ -9,8 +8,8 @@ use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
 
-// validate msisdn
-function validateMsisdn($phone): array
+// validate msisdn/ phone number
+function validateMsisdn($phone)
 {
     $phoneUtil = PhoneNumberUtil::getInstance();
     try {
@@ -38,7 +37,7 @@ function validateMsisdn($phone): array
 
 // generate random integer
 if (!function_exists('generateRandomInt')){
-    function generateRandomInt($digits = 6): string
+    function generateRandomInt($digits = 6)
     {
         $i = 0;
         $pin = "";
@@ -47,14 +46,6 @@ if (!function_exists('generateRandomInt')){
             $i++;
         }
         return $pin;
-    }
-}
-
-// load super admin account
-if (!function_exists('loadSuperAdminAccount')) {
-    function loadSuperAdminAccount($value, $column = 'email')
-    {
-        return User::where($column, $value)->first();
     }
 }
 
