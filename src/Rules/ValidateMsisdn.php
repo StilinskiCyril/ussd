@@ -9,20 +9,20 @@ use libphonenumber\PhoneNumberUtil;
 
 class ValidateMsisdn implements ValidationRule
 {
-    public $unique_check;
-    public $safaricom_check;
+    public $uniqueCheck;
+    public $safaricomCheck;
     public $model;
     public $column;
-    public $source_param;
+    public $sourceParam;
 
 
-    public function __construct($unique_check = true, $safaricom_check = false, $model = 'User', $column = 'msisdn', $source_param = 'msisdn')
+    public function __construct($uniqueCheck = true, $safaricomCheck = false, $model = 'User', $column = 'msisdn', $sourceParam = 'msisdn')
     {
-        $this->unique_check = $unique_check;
-        $this->safaricom_check = $safaricom_check;
+        $this->uniqueCheck = $uniqueCheck;
+        $this->safaricomCheck = $safaricomCheck;
         $this->model = 'App\\Models\\'.$model;
         $this->column = $column;
-        $this->source_param = $source_param;
+        $this->sourceParam = $sourceParam;
     }
 
     /**
@@ -39,20 +39,20 @@ class ValidateMsisdn implements ValidationRule
             $fail($validation['msisdn']. ' is invalid');
         }
 
-        if ($this->unique_check){
+        if ($this->uniqueCheck){
             $count = $this->model::where($this->column, $validation['msisdn'])->first();
             if ($count) {
-                $fail('Msisdn '.$validation['msisdn']. ' already taken');
+                $fail('Msisdn/ phone number '.$validation['msisdn']. ' already taken');
             }
         }
-        if ($this->safaricom_check){
+        if ($this->safaricomCheck){
             $carrierMapper = PhoneNumberToCarrierMapper::getInstance();
             $chNumber = PhoneNumberUtil::getInstance()->parse($validation['msisdn'], "KE");
             $msisdn_network = $carrierMapper->getNameForNumber($chNumber, 'en');
             if (strtolower($msisdn_network) != 'safaricom') {
-                $fail('Msisdn '.$validation['msisdn']. ' is not a safaricom number');
+                $fail('Msisdn/ phone number '.$validation['msisdn']. ' is not a safaricom phone number');
             }
         }
-        request()->merge([$this->source_param => $validation['msisdn']]);
+        request()->merge([$this->sourceParam => $validation['msisdn']]);
     }
 }
