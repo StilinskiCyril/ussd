@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('activity');
             $table->integer('attempt')->default(0);
             $table->boolean('status')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

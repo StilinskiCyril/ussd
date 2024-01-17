@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->uuid();
             $table->string('session_id')->unique();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('ussd_activity_id')->constrained();
             $table->string('direction');
             $table->string('message')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

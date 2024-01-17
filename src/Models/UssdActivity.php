@@ -4,12 +4,12 @@ namespace Aguva\Ussd\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User; ## parent app user instance
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UssdActivity extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected static function boot()
     {

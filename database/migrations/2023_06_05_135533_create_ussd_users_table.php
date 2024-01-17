@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('msisdn', 12);
             $table->string('locale')->default('en');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
