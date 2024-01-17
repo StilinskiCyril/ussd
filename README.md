@@ -29,9 +29,6 @@ Aguva Ussd is a modern multi-language (english and swahili) laravel dynamic ussd
 
     php artisan migrate
 
-### Listen to the following queues
-    save-ussd-messages - to save ussd session data into the database
-
 ### Publish the language files
     php artisan lang:publish
 
@@ -178,6 +175,16 @@ Aguva Ussd is a modern multi-language (english and swahili) laravel dynamic ussd
 ### Simulator URL
 
     The ussd simulator can be found in the url "/simulator". Kindly note that it mimics a live ussd environment meaning that you have to click "new session" button whenever you want to simulate the start of a new session.
+
+## Queue Worker Used
+    The choice is totaly up to you. You could use either of the following;
+- [redis](https://laravel.com/docs/10.x/queues/)
+- [beanstalkd](https://beanstalkd.github.io/)
+
+N/B Install [horizon console](https://laravel.com/docs/10.x/horizon) or [beanstalkd console](https://github.com/ptrofimov/beanstalk_console) to help you monitor the queues.
+
+## Queues Used
+- save-ussd-message (used to save ussd sessions data into the database)
 
 ### Uninstallation
 
